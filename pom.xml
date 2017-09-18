@@ -4,9 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.gunlee01</groupId>
-    <artifactId>thread-name-enhancer</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>kr.co.zesinc.blueworks</groupId>
+    <artifactId>javaagent</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <outputDirectory>C:/Workspaces/blueworks/blueworks-test/lib</outputDirectory>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -23,21 +36,10 @@
                             <Can-Retransform-Classes>true</Can-Retransform-Classes>
                         </manifestEntries>
                     </archive>
-                    <excludes>
-                        <exclude>**/scouter/xtra/**</exclude>
-                    </excludes>
+                    <outputDirectory>${outputDirectory}</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 
 </project>
